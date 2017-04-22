@@ -139,7 +139,7 @@ class Visita(models.Model):
 
 
 class Empleado(CustomUser):
-    solicitud = models.ManyToManyField(Solicitud)
+    solicitud = models.ManyToManyField(Solicitud, blank=True)
     id_visita = models.ForeignKey(Visita, blank=True, null=True, on_delete=models.CASCADE)
     #id_coordinacion = models.ManyToManyField(Coordinacion, blank=True)
 
@@ -174,7 +174,7 @@ class Acta(Timestampable):
 
 
 class ProcesoSolicitud(Process):
-    usuario = models.ForeignKey(User)
+    usuario = models.ForeignKey(Empleado, blank=True, null=True)
     solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
     approved = models.BooleanField(default=True)
     text = models.CharField(max_length=150, default='')
