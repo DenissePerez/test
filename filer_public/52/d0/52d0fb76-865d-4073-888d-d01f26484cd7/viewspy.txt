@@ -1,0 +1,17 @@
+from django.shortcuts import render, get_object_or_404
+#https://www.youtube.com/watch?v=KbOei4IRinc
+
+from .forms import PostForm
+from .models import Solicitud
+
+
+def post_create(request):
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+	print form.cleaned_data.get("title")#field
+	instance.save()#save into db
+    context = {
+        "form": form,    
+    }
+    return render(request, "sample.html", context)

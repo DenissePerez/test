@@ -1,0 +1,13 @@
+from django import forms
+
+#in urlpatterns = [
+# url(r'create/$', post_create),
+#]
+
+from .models import Solicitud #modelos
+
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Solicitud #Modelo al que referencio
+        fields = '__all__'
