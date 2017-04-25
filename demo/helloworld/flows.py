@@ -1,54 +1,14 @@
-from viewflow import flow
+from viewflow import flow, frontend
 from viewflow.base import this, Flow
 from viewflow.flow.views import CreateProcessView, UpdateProcessView
 from . import views, models
-from viewflow import frontend
 
 
 
-
-@frontend.register
-class ProcesoPrueba(Flow):
-    process_class = models.ProcesoPrueba
-
-    start = (
-        flow.Start(
-            CreateProcessView,
-            fields=["text", "fecha"]
-        ).Permission(
-            auto_create=True
-        ).Next(this.approve)
-    )
-
-    approve = (
-        flow.View(
-            UpdateProcessView,
-            fields=["approved"]
-        ).Permission(
-            auto_create=True
-        ).Next(this.check_approve)
-    )
-
-    check_approve = (
-        flow.If(lambda activation: activation.process.approved)
-        .Then(this.send)
-        .Else(this.end)
-    )
-
-    send = (
-        flow.Handler(
-            this.send_hello_world_request
-        ).Next(this.end)
-    )
-
-    end = flow.End()
-
-    def send_hello_world_request(self, activation):
-        print(activation.process.text)
 
 
 @frontend.register
-class ProcesoSolicitud(Flow):
+class Solicitud(Flow):
     process_class = models.ProcesoSolicitud
 
     Iniciar = (
@@ -57,15 +17,27 @@ class ProcesoSolicitud(Flow):
             fields = '__all__'
         ).Permission(
                 auto_create=True
-        ).Next(this.approve)
+        ).Next(this.asignar)
     )
 
-    approve = (
+
+    setDependencia = (
         flow.View(
             UpdateProcessView,
             fields=["approved"]
         ).Permission(
+            auto_create=True
+        )
+        .Assign(username='CoordinadorFlora')
+        .Next(this.asignar)
+    )
 
+    asignar = (
+        flow.View(
+            UpdateProcessView,
+            #fields=["approved"]
+            fields=["approved","solicitud","usuario"]
+        ).Permission(
             auto_create=True
         )
         .Assign(lambda activation: activation.process.usuario)
@@ -75,8 +47,145 @@ class ProcesoSolicitud(Flow):
 
     check_approve = (
         flow.If(lambda activation: activation.process.approved)
-        .Then(this.send)
-        .Else(this.end)
+        .Then(this.Verificar)
+        .Else(this.setDependencia)
+    )
+
+
+    Verificar = (
+        flow.View(
+            UpdateProcessView,
+            fields=["verificaInfo", "infoCompleta", "pagoRealizado"]
+        ).Permission(
+            auto_create=True
+        )
+        .Assign(lambda activation: activation.process.usuario)
+        .Next(this.check_approve2)
+    )
+
+    check_approve2 = (
+        flow.If(lambda activation: activation.process.infoCompleta and activation.process.pagoRealizado )
+        .Then(this.AgVisita)
+        .Else(this.actaRequerimiento)
+    )
+
+    actaRequerimiento = (
+        flow.View(
+            UpdateProcessView,
+            fields=["infoCompleta", "pagoRealizado"]
+        )
+        .Assign(lambda activation: activation.process.usuario)
+        .Next(this.Verificar)
+
+        )
+
+
+    AgVisita = (
+         flow.View(
+            UpdateProcessView,
+            fields=["agendarVisita"])
+        .Assign(lambda activation: activation.process.usuario)
+        .Next(this.DoVisita)
+
+        )
+
+
+    DoVisita = (
+         flow.View(
+            UpdateProcessView,
+            fields=["realizaVisita"])
+        .Assign(lambda activation: activation.process.usuario)
+        .Next(this.end)
+
+        )
+
+    end = flow.End()
+
+@frontend.register
+#Nombre del modelo
+class ProcesoVisita(Flow):
+    process_class = models.ProcesoVisita #debe importar un modelo tipo Process de viewflow
+
+    Iniciar = (
+        flow.Start( #Inicio en Viewflow
+            views.visita, #vista crada para tener un formulario
+        ).Next(this.act)
+    )
+
+    act = ( #se procede al acta
+        flow.View(
+            views.Acta, #Vista creada para mostrar el formulario del acta
+        ).Next(this.biomasa)
+    )
+
+    biomasa = ( #Preguntar si la solicitud es de más de 1000 kiligramos
+        flow.View(
+            UpdateProcessView,
+            fields=["mayor_a_1000"]
+        ).Permission(
+            auto_create=True
+            )
+            .Assign(lambda activation: activation.process.usuario)
+            .Next(this.check_approve)
+    )
+
+
+    check_approve = (
+        flow.If(lambda activation: activation.process.approved)
+        .Then(this.inform)
+        .Else(this.viabilidad)
+    )
+
+    inform = (
+        flow.View(
+            views.Informe,
+        ).Next(this.compensar)
+    )
+
+    compensar = (
+        flow.View(
+            views.balance,
+        ).Next(this.end)
+    )
+
+    viabilidad = (
+        flow.View(
+            UpdateProcessView,
+            fields=["requiere_compensar"]
+        ).Permission(
+            auto_create=True
+        )
+            .Assign(lambda activation: activation.process.usuario)
+            .Next(this.check_approve)
+    )
+
+    check_viabilidad = (
+        flow.If(lambda activation: activation.process.approved)
+            .Then(this.compensa)
+            .Else(this.end)
+    )
+
+    compensa = (
+        flow.View(
+            UpdateProcessView,
+            fields=["requiere_compensar"]
+        ).Permission(
+            auto_create=True
+        )
+            .Assign(lambda activation: activation.process.usuario)
+            .Next(this.check_approve)
+    )
+
+    check_compensacion = (
+        flow.If(lambda activation: activation.process.approved)
+            .Then(this.compensar)
+            .Else(this.respuesta)
+    )
+
+    respuesta = (
+        flow.View(
+            views.respuesta,
+        ).Next(this.end)
     )
 
     send = (
@@ -91,41 +200,3 @@ class ProcesoSolicitud(Flow):
         print(activation.process.text)
 
 
-#@frontend.register
-#class Visita(Flow):
-#    process_class = Visita
-
-#    start = (
-#        flow.Start(
-#            CreateProcessView,
-#            fields=["id_visita", "detalles", "id_arbol", "id_solicitud", "fecha"]
-#        ).Permission(
-#           auto_create=False
-#        ).Next(this.approve)
-#   )
-
-#    approve = (
-#        flow.View(
-#            UpdateProcessView,
-#            fields=["approved"]
-#        ).Permission(
-#            auto_create=True
-#        ).Next(this.check_approve)
-#    )
-
-#    check_approve = (
-#        flow.If(lambda activation: activation.process.approved)
-#        .Then(this.send)
-#        .Else(this.end)
-#    )
-
-#    send = (
-#        flow.Handler(
-#            this.send_hello_world_request
-#        ).Next(this.end)
-#    )
-
-#    end = flow.End()
-
-#    def send_hello_world_request(self, activation):
-#        print(activation.process.text)

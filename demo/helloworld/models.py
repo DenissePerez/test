@@ -2,6 +2,7 @@ from datetime import timezone, datetime, timedelta, date
 from django.db import models
 from django.core.validators import RegexValidator
 from viewflow.models import Process
+from django.contrib import auth
 from django.contrib.auth.models import User, UserManager, Group
 from django import forms
 from filer.fields.image import FilerFileField
@@ -126,13 +127,16 @@ class Ficha_individuo(models.Model):
         return self.id_arbol
 
 
+class AgendarVisita(models.Model):
+    fecha_agendada = models.DateTimeField()
 
-class Visita(models.Model):
+
+class Visita(AgendarVisita):
     id_visita = models.CharField(primary_key=True, max_length=5, validators=[RegexValidator(r'^\d{1,10}$')])
     detalles = models.CharField(max_length=300)
     id_arbol = models.ManyToManyField(Ficha_individuo)
     id_solicitud = models.ForeignKey(Solicitud, blank=True, null=True, on_delete=models.CASCADE)
-    fecha = models.DateField()
+    kilogramos_biomasa = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
 
     def __str__(self):
         return self.id_visita
@@ -141,9 +145,7 @@ class Visita(models.Model):
 class Empleado(CustomUser):
     solicitud = models.ManyToManyField(Solicitud, blank=True)
     id_visita = models.ForeignKey(Visita, blank=True, null=True, on_delete=models.CASCADE)
-    #id_coordinacion = models.ManyToManyField(Coordinacion, blank=True)
-
-    #coordinacion = models.CharField(max_length=1, choices=COORDINACIONES,default='1')
+    #g = request.user.groups.values_list('name',flat=True)
 
 
     class Meta:
@@ -165,19 +167,49 @@ class Seguimiento(models.Model):
     adjunto = FilerFileField(null=True)
 
 
+
 class Acta(Timestampable):
-    id_acta = models.CharField(primary_key=True, max_length=5)
+    id_acta = models.CharField(primary_key=True, max_length=7)
     id_visita = models.OneToOneField(Visita,on_delete=models.CASCADE)
     descripcion = models.CharField(max_length=300)
-    acta = FilerFileField(blank=True, null=True)
+    #acta = FilerFileField(blank=True, null=True)
+
+    def __str__(self):
+        return self.descripcion
 
 
+
+class Respuesta(models.Model):
+    id_solicitud = models.ForeignKey(Solicitud)
+    respuesta = FilerFileField(null=True)
 
 class ProcesoSolicitud(Process):
     usuario = models.ForeignKey(Empleado, blank=True, null=True)
     solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
     approved = models.BooleanField(default=True)
     text = models.CharField(max_length=150, default='')
+
+    verificaInfo = models.BooleanField(default=False)
+    infoCompleta = models.BooleanField(default=False)
+    pagoRealizado = models.BooleanField(default=False)
+    agendarVisita = models.DateField(blank=True, null=True)
+    realizaVisita = models.BooleanField(default=False)
+
+
+
+class ProcesoVisita(Process):
+    usuario = models.ForeignKey(Empleado, blank=True, null=True)
+    solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
+    approved = models.BooleanField(default=True)
+    visita = models.ForeignKey(Visita, blank=True, null=True)
+    text = models.CharField(max_length=150, default='')
+
+    mayor_a_1000 = models.BooleanField(default=False)
+    requiere_compensar = models.BooleanField(default=False)
+    agendarVisita = models.DateField(blank=True, null=True)
+    realizaVisita = models.BooleanField(default=False)
+
+
 
 
 
