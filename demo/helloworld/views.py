@@ -1,5 +1,6 @@
 from django.views import generic
 from django.shortcuts import render, redirect
+from django.forms import formset_factory
 from formtools.wizard.views import SessionWizardView
 
 from viewflow.decorators import flow_start_view, flow_view
@@ -10,14 +11,14 @@ from . import forms, models
 from django.shortcuts import render, get_object_or_404
 #https://www.youtube.com/watch?v=KbOei4IRinc
 
-from .forms import PostForm, VisitaForm, ProcesoVisitaF
+from .forms import PostForm, VisitaForm, ArticleFormSet, BookFormSet, ProcesoVisita, VisitaForm
 from .models import Solicitud
 
 #Las vistas a continuación descritas, importan uno de los formularios creados
 #Buscando sobreescribir la vista de viewflow
 
 
-@flow_start_view
+@flow_view
 def second_blood_sample(request, **kwargs):
     request.activation.prepare(request.POST or None, user=request.user)
     form = forms.ProcesoSolicitudF(request.POST or None)
@@ -39,11 +40,10 @@ def second_blood_sample(request, **kwargs):
         'activation': request.activation
     })
 
-
-@flow_start_view
+@flow_view
 def visita(request, **kwargs):
     request.activation.prepare(request.POST or None, user=request.user)
-    form = forms.ProcesoVisitaF(request.POST or None)
+    form = forms.VisitaForm(request.POST or None)
     #g = request.user.groups.values_list('Coordinador', flat=True)
 
     if form.is_valid():

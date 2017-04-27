@@ -90,7 +90,7 @@ class Solicitud(Solicitante, models.Model):
     barrio_solicitud = models.CharField(max_length=100, default=' ')
     municipio = models.CharField(max_length=100, default=' ')
     fecha = models.DateField(default=date.today)  # Agregar!
-    fecha_entrega = models.DateField(default=datetime.now()+timedelta(days=18))
+    fecha_respuesta = models.DateField(default=datetime.now()+timedelta(days=18))
     #asignar_a = models.ManyToManyField(Empleado, blank=True)
     approved = models.BooleanField(default=False)
 
@@ -170,9 +170,9 @@ class Seguimiento(models.Model):
 
 class Acta(Timestampable):
     id_acta = models.CharField(primary_key=True, max_length=7)
-    id_visita = models.OneToOneField(Visita,on_delete=models.CASCADE)
+    id_visita = models.ForeignKey(Visita,on_delete=models.CASCADE)
     descripcion = models.CharField(max_length=300)
-    #acta = FilerFileField(blank=True, null=True)
+    #acta = models.FileField(upload_to='img/profile/%Y/%m/')
 
     def __str__(self):
         return self.descripcion
@@ -194,11 +194,14 @@ class ProcesoSolicitud(Process):
     pagoRealizado = models.BooleanField(default=False)
     agendarVisita = models.DateField(blank=True, null=True)
     realizaVisita = models.BooleanField(default=False)
+    def __str__(self):
+        return '%s %s' (self.descripcion, self.text)
+
 
 
 
 class ProcesoVisita(Process):
-    usuario = models.ForeignKey(Empleado, blank=True, null=True)
+    #usuario = models.ForeignKey(Empleado, blank=True, null=True)
     solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
     approved = models.BooleanField(default=True)
     visita = models.ForeignKey(Visita, blank=True, null=True)

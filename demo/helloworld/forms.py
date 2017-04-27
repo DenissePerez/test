@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import formset_factory
 from material.base import Layout, Row, Span2
 from . import models
 
@@ -9,39 +10,14 @@ from . import models
 # y no al modelo de tipo proceso.
 
 
-class PatientForm(forms.ModelForm):
-    layout = Layout(
-        Row('nombre', 'nombre_solicitate'),
-        Row('direccion_solicitud', 'barrio_solicitud'),
-        Row('municipio','fecha',)
-    )
-
-    class Meta:
-        model = models.Solicitud
-        fields = '__all__'
-
-
 class ProcesoSolicitudF(forms.ModelForm):
-    layout = Layout(
-        Row('nombre', 'nombre_solicitate'),
-        Row('direccion_solicitud', 'barrio_solicitud'),
-        Row('municipio', 'fecha', )
-    )
-
     class Meta:
         model = models.Solicitud
-        fields = '__all__'
-
-class ProcesoVisitaF(forms.ModelForm):
-    layout = Layout(
-        Row('id_visita', 'fecha_agendada', 'kilogramos_biomasa'),
-        Row('detalles'),
-        Row('id_arbol', 'id_solicitud')
-    )
-
-    class Meta:
-        model = models.Visita
-        fields = '__all__'
+        fields = ['nombre_solicitate', 'identificacion_solicitate',
+                  'direccion_solicitate', 'barrio_solicitate',
+                  'id_solicitud', 'nombre', 'id_expediente',
+                  'direccion_solicitud', 'barrio_solicitud', 'municipio',
+                  'fecha', 'fecha_respuesta']
 
 
 
@@ -59,6 +35,14 @@ class VisitaForm(forms.ModelForm):
     class Meta:
         model = models.Visita #Modelo al que referencio
         fields = '__all__'
+ArticleFormSet = formset_factory(VisitaForm)
+
+
+class ProcesoVisita(forms.ModelForm):
+    class Meta:
+        model = models.ProcesoVisita
+        fields = ['text']
+BookFormSet = formset_factory(ProcesoVisita)
 
 
 class Acta(forms.ModelForm):
