@@ -153,22 +153,30 @@ class HelloWorldFlow(Flow):
             task_description ="Requiere aprobacion",
             task_result_summary="La tarea ha sido {{ process.approved|yesno:'Approved,Rejected' }}")
             .Permission(auto_create=True)
-            .Next(this.biomasa)
-    )
-    biomasa = (  # La solicitud es de más de 1000 kiligramos?
-        flow.View(
-            UpdateProcessView,
-
-            fields=["mayor_a_1000"]
-            ).Permission(auto_create=True)
             .Next(this.check_approve)
-        )
+    )
+    # biomasa = (  # La solicitud es de más de 1000 kiligramos?
+    #     flow.View(
+    #         UpdateProcessView,
+    #
+    #         fields=["mayor_a_1000"]
+    #         ).Permission(auto_create=True)
+    #         .Next(this.check_approve)
+    #     )
 
     check_approve = (
-        flow.If(cond=lambda act: act.process.mayor_a_1000)
-            .Then(this.inform)
-            .Else(this.end)
-    )
+        flow.View(
+            views.Acta,
+            flow.If(lambda act: act.process.kilogramos_biomasa)
+                .Then(this.inform)
+                .Else(this.viabilidad)
+            )
+
+        )
+    #     flow.If(cond=lambda act: act.process.views.Acta.kilogramos_biomasa>1000)
+    #         .Then(this.inform)
+    #         .Else(this.viabilidad)
+    # )
     inform = (
         flow.View(
             views.Informe,

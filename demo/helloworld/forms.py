@@ -35,14 +35,16 @@ class VisitaForm(forms.ModelForm):
     class Meta:
         model = models.Visita #Modelo al que referencio
         fields = '__all__'
-ArticleFormSet = formset_factory(VisitaForm)
 
+class BiomasaForm(forms.ModelForm):
+    class Meta:
+        model = models.Visita #Modelo al que referencio
+        fields = ['kilogramos_biomasa']
 
 class ProcesoVisita(forms.ModelForm):
     class Meta:
         model = models.ProcesoVisita
         fields = ['titulo']
-BookFormSet = formset_factory(ProcesoVisita)
 
 
 class Acta(forms.ModelForm):

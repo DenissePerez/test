@@ -183,6 +183,7 @@ class Respuesta(models.Model):
     id_solicitud = models.ForeignKey(Solicitud)
     respuesta = FilerFileField(null=True)
 
+
 class ProcesoSolicitud(Process):
     usuario = models.ForeignKey(Empleado, blank=True, null=True)
     solicitud = models.ForeignKey(Solicitud, blank=True, null=True)

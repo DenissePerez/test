@@ -11,7 +11,7 @@ from . import forms, models
 from django.shortcuts import render, get_object_or_404
 #https://www.youtube.com/watch?v=KbOei4IRinc
 
-from .forms import PostForm, VisitaForm, ArticleFormSet, BookFormSet, ProcesoVisita, VisitaForm
+from .forms import PostForm, VisitaForm, ProcesoVisita, VisitaForm
 from .models import Solicitud
 
 #Las vistas a continuación descritas, importan uno de los formularios creados
@@ -61,6 +61,30 @@ def visita(request, **kwargs):
         'form': form,
         'activation': request.activation
     })
+
+
+@flow_view
+def check_biomasa(request, **kwargs):
+    request.activation.prepare(request.POST or None, user=request.user)
+    form = forms.VisitaForm(request.POST or None)
+    #g = request.user.groups.values_list('Coordinador', flat=True)
+
+    if form.is_valid():
+        sample = form.save(commit=False)
+        sample.patient = form.cleaned_data['kilogramos_biomasa']
+        #sample.taken_by = request.user
+        sample.save()
+
+        request.activation.process.sample = sample
+        request.activation.done()
+
+        return redirect(get_next_task_url(request, request.activation.process))
+
+    return render(request, 'sample2.html', {
+        'form': form,
+        'activation': request.activation
+    })
+
 
 
 @flow_view
