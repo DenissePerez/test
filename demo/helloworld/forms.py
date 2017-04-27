@@ -41,7 +41,7 @@ ArticleFormSet = formset_factory(VisitaForm)
 class ProcesoVisita(forms.ModelForm):
     class Meta:
         model = models.ProcesoVisita
-        fields = ['text']
+        fields = ['titulo']
 BookFormSet = formset_factory(ProcesoVisita)
 
 

@@ -54,7 +54,7 @@ class Informe_tecnico(Timestampable):
     id_informe = models.CharField(primary_key=True, max_length=8, validators=[RegexValidator(r'^\d{1,8}$')])
     nombre = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=300)
-    informe = FilerFileField(null=True)
+    #informe = FilerFileField(null=True)
 
     def __str__(self):
         return self.id_informe
@@ -187,7 +187,7 @@ class ProcesoSolicitud(Process):
     usuario = models.ForeignKey(Empleado, blank=True, null=True)
     solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
     approved = models.BooleanField(default=True)
-    text = models.CharField(max_length=150, default='')
+    titulo = models.CharField(max_length=250, default='')
 
     verificaInfo = models.BooleanField(default=False)
     infoCompleta = models.BooleanField(default=False)
@@ -195,7 +195,7 @@ class ProcesoSolicitud(Process):
     agendarVisita = models.DateField(blank=True, null=True)
     realizaVisita = models.BooleanField(default=False)
     def __str__(self):
-        return '%s %s' (self.descripcion, self.text)
+        return '%s %s' (self.descripcion, self.titulo)
 
 
 
@@ -205,13 +205,25 @@ class ProcesoVisita(Process):
     solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
     approved = models.BooleanField(default=True)
     visita = models.ForeignKey(Visita, blank=True, null=True)
-    text = models.CharField(max_length=150, default='')
+    titulo = models.CharField(max_length=250, default='')
 
     mayor_a_1000 = models.BooleanField(default=False)
     requiere_compensar = models.BooleanField(default=False)
     agendarVisita = models.DateField(blank=True, null=True)
     realizaVisita = models.BooleanField(default=False)
 
+
+class ProcesoCompensacion(Process):
+    #usuario = models.ForeignKey(Empleado, blank=True, null=True)
+    solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
+    approved = models.BooleanField(default=True)
+    visita = models.ForeignKey(Visita, blank=True, null=True)
+    titulo = models.CharField(max_length=250, default='')
+
+    mayor_a_1000 = models.BooleanField(default=False)
+    requiere_compensar = models.BooleanField(default=False)
+    agendarVisita = models.DateField(blank=True, null=True)
+    realizaVisita = models.BooleanField(default=False)
 
 
 

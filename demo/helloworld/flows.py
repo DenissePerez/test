@@ -7,13 +7,13 @@ from . import views, models
 @frontend.register
 class ProcesoSolicitud(Flow):
     process_class = models.ProcesoSolicitud
-    summary_template = "'{{ process.text }}'"
+    summary_template = "'{{ process.titulo }}'"
 
 
     Iniciar_Proceso = (
         flow.Start(
             CreateProcessView,
-            fields = ['text']
+            fields = ['titulo']
         ).Next(this.Iniciar)
     )
 
@@ -46,7 +46,7 @@ class ProcesoSolicitud(Flow):
     asignar = (
         flow.View(
             UpdateProcessView,
-            fields=["people"]
+            fields=["usuario"]
         ).Permission(
             auto_create=True
         )
@@ -55,7 +55,7 @@ class ProcesoSolicitud(Flow):
     )
 
     check_approve3 = (
-        flow.If(lambda activation: activation.process.people.username == 'yurs')  # toca verificar si es un tecnico
+        flow.If(lambda activation: activation.process.usuario.username == 'yurs')  # toca verificar si es un tecnico
         .Then(this.Verificar)
         .Else(this.end)
     )
@@ -67,7 +67,7 @@ class ProcesoSolicitud(Flow):
         ).Permission(
             auto_create=True
         )
-        .Assign(lambda activation: activation.process.people)
+        .Assign(lambda activation: activation.process.usuario)
         .Next(this.check_approve2)
     )
 
@@ -82,7 +82,7 @@ class ProcesoSolicitud(Flow):
             UpdateProcessView,
             fields=["infoCompleta", "pagoRealizado"]
         )
-        .Assign(lambda activation: activation.process.people)
+        .Assign(lambda activation: activation.process.usuario)
         .Next(this.Verificar)
 
         )
@@ -91,7 +91,7 @@ class ProcesoSolicitud(Flow):
          flow.View(
             UpdateProcessView,
             fields=["agendarVisita"])
-        .Assign(lambda activation: activation.process.people)
+        .Assign(lambda activation: activation.process.usuario)
         .Next(this.DoVisita)
 
         )
@@ -100,7 +100,7 @@ class ProcesoSolicitud(Flow):
          flow.View(
             UpdateProcessView,
             fields=["realizaVisita"])
-        .Assign(lambda activation: activation.process.people)
+        .Assign(lambda activation: activation.process.usuario)
         .Next(this.end)
 
         )
@@ -130,12 +130,12 @@ class HelloWorldFlow(Flow):
     process_class = models.ProcesoVisita
     #lock_impl = lock.select_for_update_lock
 
-    summary_template = "'{{ process.text }}'"
+    summary_template = "'{{ process.titulo }}'"
 
     Iniciar = (
         flow.Start(
             CreateProcessView,
-            fields=['text']
+            fields=['titulo']
         ).Next(this.Inicio)
     )
 
@@ -165,7 +165,7 @@ class HelloWorldFlow(Flow):
         )
 
     check_approve = (
-        flow.If(cond=lambda act: act.process.approved)
+        flow.If(cond=lambda act: act.process.mayor_a_1000)
             .Then(this.inform)
             .Else(this.end)
     )
@@ -187,12 +187,12 @@ class HelloWorldFlow(Flow):
         ).Permission(
             auto_create=True
         )
-            .Assign(lambda activation: activation.process.usuario)
+            .Assign(lambda activation: activation.process.requiere_compensar)
             .Next(this.check_approve)
     )
 
     check_viabilidad = (
-        flow.If(lambda activation: activation.process.approved)
+        flow.If(lambda activation: activation.process.requiere_compensar)
             .Then(this.compensa)
             .Else(this.end)
     )
@@ -204,12 +204,12 @@ class HelloWorldFlow(Flow):
         ).Permission(
             auto_create=True
         )
-            .Assign(lambda activation: activation.process.usuario)
+            .Assign(lambda activation: activation.process.requiere_compensar)
             .Next(this.check_approve)
     )
 
     check_compensacion = (
-        flow.If(lambda activation: activation.process.approved)
+        flow.If(lambda activation: activation.process.requiere_compensar)
             .Then(this.compensar)
             .Else(this.respuesta)
     )
@@ -224,7 +224,7 @@ class HelloWorldFlow(Flow):
 
     def send_hello_world_request(self, activation):
         with open(os.devnull, "w") as world:
-            world.write(activation.process.text)
+            world.write(activation.process.titulo)
 
 #     )
 
