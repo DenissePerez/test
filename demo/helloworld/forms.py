@@ -3,6 +3,7 @@ from django.forms import formset_factory
 from material.base import Layout, Row, Span2
 from . import models
 
+
 # Formularios que importan los modelos, creando una conexión
 # entre el proceso y el modelo real.
 # Su fin es mostrar un formulario con los campos de la tabla
@@ -36,11 +37,7 @@ class VisitaForm(forms.ModelForm):
         model = models.Visita #Modelo al que referencio
         fields = '__all__'
 
-class BiomasaForm(forms.ModelForm):
-    class Meta:
-        model = models.Visita #Modelo al que referencio
-        fields = ['kilogramos_biomasa']
-
+ 
 class ProcesoVisita(forms.ModelForm):
     class Meta:
         model = models.ProcesoVisita
@@ -51,13 +48,24 @@ class Acta(forms.ModelForm):
     class Meta:
         model = models.Acta
         fields = ['id_acta', 'id_visita', 'descripcion']
+        
+class Subir_acta(forms.ModelForm):
+    class Meta:
+        model = models.Subir_acta
+        fields = ['id_acta']
 
 
 class Informe(forms.ModelForm):
     class Meta:
         model = models.Informe_tecnico
-        fields = '__all__'
+        fields = ['id_informe', 'nombre', 'descripcion']
 
+
+class Resolucion(forms.ModelForm):
+    class Meta:
+        model = models.Resolucion
+        fields = '__all__'
+        
 
 class Balance(forms.ModelForm):
     class Meta:
@@ -65,7 +73,26 @@ class Balance(forms.ModelForm):
         fields = '__all__'
 
 
-class respuesta(forms.ModelForm):
+class Respuesta(forms.ModelForm):
     class Meta:
         model = models.Respuesta
         fields = '__all__'
+
+
+class Recaudo(forms.ModelForm):
+    class Meta:
+        model = models.Recaudo
+        fields = '__all__'
+
+
+class paz_y_salvo(forms.ModelForm):
+    class Meta:
+        model = models.paz_y_salvo
+        fields = '__all__'
+        
+class Seguimiento(forms.ModelForm):
+	class Meta:
+		model = models.Seguimiento
+		fields = '__all__'
+        
+        

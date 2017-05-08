@@ -9,39 +9,38 @@ class ProcesoSolicitud(Flow):
     process_class = models.ProcesoSolicitud
     summary_template = "'{{ process.titulo }}'"
 
-
     Iniciar_Proceso = (
         flow.Start(
             CreateProcessView,
-            fields = ['titulo']
+            fields=['titulo']
         ).Next(this.Iniciar)
     )
 
     Iniciar = (
         flow.View(
-            views.second_blood_sample,
-            fields = '__all__'
+            views.solicitud,
+            fields='__all__'
         ).Permission(
-                auto_create=True
+            auto_create=True
         ).Next(this.setDependencia)
     )
 
     setDependencia = (
         flow.View(
             UpdateProcessView,
-            fields=["coordinacion"]
+            fields=['coordinacion']
         ).Permission(
             auto_create=True
         )
-        .Assign(username='sec')
-        .Next(this.setDependencia2)
+            #.Assign(username='secretaria')
+            .Next(this.setDependencia2)
     )
 
     setDependencia2 = (
         flow.If(lambda activation: activation.process.coordinacion == '1')
-        .Then(this.asignar)
-        .Else(this.end)
-           )
+            .Then(this.asignar)
+            .Else(this.end)
+    )
 
     asignar = (
         flow.View(
@@ -50,76 +49,55 @@ class ProcesoSolicitud(Flow):
         ).Permission(
             auto_create=True
         )
-        .Assign(username='coo')
-        .Next(this.Verificar)
+            #.Assign(username='coordinador_flora')
+            .Next(this.Verificar)
     )
 
     check_approve3 = (
-        flow.If(lambda activation: activation.process.usuario.username == 'yurs')  # toca verificar si es un tecnico
-        .Then(this.Verificar)
-        .Else(this.end)
+        flow.If(lambda
+                    activation: activation.process.usuario.username == 'tecnico_flora')  # toca verificar si es un tecnico
+            .Then(this.Verificar)
+            .Else(this.end)
     )
 
     Verificar = (
         flow.View(
             UpdateProcessView,
-            fields=["verificaInfo", "infoCompleta", "pagoRealizado"]
+            fields=["informacion_Completa", "pago_Realizado"]
         ).Permission(
             auto_create=True
         )
-        .Assign(lambda activation: activation.process.usuario)
-        .Next(this.check_approve2)
+            .Assign(lambda activation: activation.process.usuario)
+            .Next(this.check_approve2)
     )
 
     check_approve2 = (
-        flow.If(lambda activation: activation.process.infoCompleta and activation.process.pagoRealizado )
-        .Then(this.AgVisita)
-        .Else(this.actaRequerimiento)
+        flow.If(lambda activation: activation.process.informacion_Completa and activation.process.pago_Realizado)
+            .Then(this.AgVisita)
+            .Else(this.actaRequerimiento)
     )
 
     actaRequerimiento = (
         flow.View(
             UpdateProcessView,
-            fields=["infoCompleta", "pagoRealizado"]
+            fields=["informacion_Completa", "pago_Realizado"]
         )
-        .Assign(lambda activation: activation.process.usuario)
-        .Next(this.Verificar)
+            .Assign(lambda activation: activation.process.usuario)
+            .Next(this.Verificar)
 
-        )
+    )
 
     AgVisita = (
-         flow.View(
+        flow.View(
             UpdateProcessView,
             fields=["agendarVisita"])
-        .Assign(lambda activation: activation.process.usuario)
-        .Next(this.DoVisita)
+            .Assign(lambda activation: activation.process.usuario)
+            .Next(this.end)
 
-        )
-
-    DoVisita = (
-         flow.View(
-            UpdateProcessView,
-            fields=["realizaVisita"])
-        .Assign(lambda activation: activation.process.usuario)
-        .Next(this.end)
-
-        )
-
-    end = flow.End()
-
-
-# ---------- Metodos -----------
-    imprimir = (
-        flow.Handler(
-            this.print_message_Ys
-        ).Next(setDependencia2)
     )
 
 
-    def print_message_Ys(self, activation):
-        print(type(activation.process.coordinacion))
-        print(activation.process.coordinacion)
-        print(activation.process.coordinacion=="1")
+    end = flow.End()
 
 
 @frontend.register
@@ -128,7 +106,7 @@ class HelloWorldFlow(Flow):
     Proceso visita.
     """
     process_class = models.ProcesoVisita
-    #lock_impl = lock.select_for_update_lock
+    # lock_impl = lock.select_for_update_lock
 
     summary_template = "'{{ process.titulo }}'"
 
@@ -136,67 +114,74 @@ class HelloWorldFlow(Flow):
         flow.Start(
             CreateProcessView,
             fields=['titulo']
-        ).Next(this.Inicio)
+        )
+            .Next(this.Inicio)
     )
-
 
     Inicio = (
         flow.View(
             views.visita,
-            )
+        )#.Assign(username__contains='tecnico_flora')
             .Next(this.approve)
-        )
+    )
 
     approve = (
         flow.View(
             views.Acta,
-            task_description ="Requiere aprobacion",
-            task_result_summary="La tarea ha sido {{ process.approved|yesno:'Approved,Rejected' }}")
+            task_description="Requiere aprobacion",
+            task_result_summary="La tarea ha sido {{ process.approved|yesno:'Approbada,Rechazada' }}"
+        )
             .Permission(auto_create=True)
-            .Next(this.check_approve)
+            .Next(this.biomasa)
     )
-    # biomasa = (  # La solicitud es de más de 1000 kiligramos?
-    #     flow.View(
-    #         UpdateProcessView,
-    #
-    #         fields=["mayor_a_1000"]
-    #         ).Permission(auto_create=True)
-    #         .Next(this.check_approve)
-    #     )
+
+
+    biomasa = (  # La solicitud es de más de 1000 kiligramos?
+        flow.View(
+            UpdateProcessView,
+            fields=["mayor_a_1000"]
+        ).Permission(auto_create=True)
+         .Next(this.check_approve)
+    )
 
     check_approve = (
-        flow.View(
-            views.Acta,
-            flow.If(lambda act: act.process.kilogramos_biomasa)
-                .Then(this.inform)
-                .Else(this.viabilidad)
-            )
+        flow.If(lambda activation: activation.process.mayor_a_1000)
+            .Then(this.informe) #De ser así hacer informe técnico
+            .Else(this.compensa) #De lo contrario, preguntar si se requiere compensación
+    )
 
-        )
-    #     flow.If(cond=lambda act: act.process.views.Acta.kilogramos_biomasa>1000)
-    #         .Then(this.inform)
-    #         .Else(this.viabilidad)
-    # )
-    inform = (
+    informe = (
         flow.View(
             views.Informe,
-        ).Next(this.compensar)
+        )#.Assign(username='tecnico_flora')
+         .Next(this.aprobar_informe)
     )
+
+    aprobar_informe = (
+        flow.View(
+            UpdateProcessView,
+            fields=["visto_bueno"]
+        )#.Assign(username='coodinador_flora')
+         .Next(this.verificar_visto_informe)
+    )
+
+    verificar_visto_informe = (
+        flow.If(lambda act: act.process.visto_bueno)
+            .Then(this.resolucion)
+            .Else(this.informe)
+    )
+
+    resolucion = (
+        flow.View(
+            views.Resolucion,
+        )#.Assign(username='tecnico_flora')
+         .Next(this.compensar)
+    )
+
     compensar = (
         flow.View(
             views.balance,
         ).Next(this.end)
-    )
-
-    viabilidad = (
-        flow.View(
-            UpdateProcessView,
-            fields=["requiere_compensar"]
-        ).Permission(
-            auto_create=True
-        )
-            .Assign(lambda activation: activation.process.requiere_compensar)
-            .Next(this.check_approve)
     )
 
     check_viabilidad = (
@@ -205,15 +190,15 @@ class HelloWorldFlow(Flow):
             .Else(this.end)
     )
 
-    compensa = (
+    compensa = ( #Si la solicitud requiere compensación, vaya a compensaciones
         flow.View(
             UpdateProcessView,
             fields=["requiere_compensar"]
         ).Permission(
             auto_create=True
         )
-            .Assign(lambda activation: activation.process.requiere_compensar)
-            .Next(this.check_approve)
+         #.Assign(lambda activation: activation.process.requiere_compensar)
+         .Next(this.check_approve)
     )
 
     check_compensacion = (
@@ -234,8 +219,91 @@ class HelloWorldFlow(Flow):
         with open(os.devnull, "w") as world:
             world.write(activation.process.titulo)
 
-#     )
 
+# )
+
+@frontend.register
+class Compensacion(Flow):
+    """    
+    Proceso de Compensacion.
+    """
+    process_class = models.ProcesoCompensacion
+    # lock_impl = lock.select_for_update_lock
+
+    summary_template = "'{{ process.titulo }}'"
+
+    Iniciar = (
+        flow.Start(
+            CreateProcessView,
+            fields=['titulo']
+        )
+            .Next(this.tipo_compensacion)
+    )
+
+    tipo_compensacion = (
+        flow.View(
+            UpdateProcessView,
+            fields=["compensacion_economica"]
+        ).Permission(
+            auto_create=True
+        )#.Assign(username__contains='tecnico_flora')
+         .Next(this.check_compensacion)
+    )
+
+    check_compensacion = (
+        flow.If(lambda activation: activation.process.compensacion_economica)
+            .Then(this.recaudar)
+            .Else(this.agendar_visita)
+    )
+    recaudar = (
+        flow.View(
+            views.Recaudo,
+        )
+            .Next(this.balance)
+    )
+
+    balance = (
+        flow.View(
+            views.balance,
+            task_description="Requiere aprobacion",
+            task_result_summary="La tarea ha sido {{ process.approved|yesno:'Approved,Rejected' }}")
+            .Permission(auto_create=True)
+            .Next(this.balance_en_cero)
+    )
+
+    balance_en_cero = (
+        flow.View(
+            UpdateProcessView,
+            fields=["balance_en_cero"]
+        ).Permission(
+            auto_create=True
+        )#.Assign(lambda activation: activation.process.balance_en_cero)
+          .Next(this.check_balance_en_cero)
+    )
+
+    check_balance_en_cero = (
+        flow.If(lambda activation: activation.process.balance_en_cero)
+            .Then(this.paz_y_salvo)
+            .Else(this.agendar_visita)
+    )
+
+    paz_y_salvo = (
+        flow.View(
+            views.paz_y_salvo,
+        ).Next(this.end)
+    )
+
+    agendar_visita = (
+        flow.View(
+            views.seguimiento,
+        ).Next(this.end)
+    )
+
+    end = flow.End()
+
+    def send_hello_world_request(self, activation):
+        with open(os.devnull, "w") as world:
+            world.write(activation.process.titulo)
 
     end = flow.End()
 

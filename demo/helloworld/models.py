@@ -5,7 +5,8 @@ from viewflow.models import Process
 from django.contrib import auth
 from django.contrib.auth.models import User, UserManager, Group
 from django import forms
-from filer.fields.image import FilerFileField
+from .choices import COORDINACIONES
+#from filer.fields.image import FilerFileField
 from django.contrib.auth.models import User
 
 
@@ -39,8 +40,10 @@ class Balance(models.Model):
     descripcion = models.CharField(max_length=200)
     valor_compensado = models.DecimalField(max_digits=15, decimal_places=2, default='0,00')
     valor_afectacion = models.DecimalField(max_digits=15, decimal_places=2, default='0,00')
-    valor_balance = models.DecimalField(max_digits=15, decimal_places=2, default='0,00')
+    saldo = models.DecimalField(max_digits=15, decimal_places=2, default='0,00')
 
+    def __str__(self):
+        return self.id_balance
 
 class Timestampable(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
@@ -55,15 +58,32 @@ class Informe_tecnico(Timestampable):
     nombre = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=300)
     #informe = FilerFileField(null=True)
+   # informe = models.FileField(null=True)
 
     def __str__(self):
         return self.id_informe
+        
+        
+class Resolucion(models.Model):
+    id_resolucion = models.CharField(primary_key=True, max_length=5, validators=[RegexValidator(r'^\d{1,5}$')])
+    nombre = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.id_resolucion
 
+
+class paz_y_salvo(models.Model):
+    id_paz_y_salvo = models.CharField(primary_key=True, max_length=5, validators=[RegexValidator(r'^\d{1,5}$')])
+    nombre = models.CharField(max_length=200)
+    
+
+    def __str__(self):
+        return self.id_paz_y_salvo
 
 class Expediente(models.Model):
     id_expediente = models.CharField(primary_key=True, max_length=5, validators=[RegexValidator(r'^\d{1,5}$')])
     nombre = models.CharField(max_length=200)
-    resolucion = models.CharField(max_length=12, blank=True, null=True)
+    resolucion = models.ForeignKey(Resolucion, blank=True, null=True, on_delete=models.CASCADE)
     autorizacion = models.CharField(max_length=12, blank=True, null=True)
 
     def __str__(self):
@@ -75,7 +95,7 @@ class Recaudo(models.Model):
     numero_recaudo = models.CharField(primary_key=True, max_length=12, validators=[RegexValidator(r'^\d{1,12}$')])
     banco = models.CharField(max_length=200)
     valor = models.DecimalField(max_digits=15, decimal_places=2, default='0,00')
-    evidencia = FilerFileField(null=True)
+    #evidencia = FilerFileField(null=True)
 
     def __str__(self):
         return self.numero_recaudo
@@ -102,7 +122,7 @@ class Solicitud(Solicitante, models.Model):
 class Anexo(models.Model):
     id_anexo = models.CharField(primary_key=True, max_length=12)
     nombre = models.CharField(max_length=200)
-    anexo = FilerFileField(null=True)
+    #anexo = FilerFileField(null=True)
     id_solicitud = models.ForeignKey(Solicitud, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -136,8 +156,7 @@ class Visita(AgendarVisita):
     detalles = models.CharField(max_length=300)
     id_arbol = models.ManyToManyField(Ficha_individuo)
     id_solicitud = models.ForeignKey(Solicitud, blank=True, null=True, on_delete=models.CASCADE)
-    kilogramos_biomasa = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
-
+   
     def __str__(self):
         return self.id_visita
 
@@ -145,17 +164,11 @@ class Visita(AgendarVisita):
 class Empleado(CustomUser):
     solicitud = models.ManyToManyField(Solicitud, blank=True)
     id_visita = models.ForeignKey(Visita, blank=True, null=True, on_delete=models.CASCADE)
-    #g = request.user.groups.values_list('name',flat=True)
 
 
     class Meta:
         verbose_name = 'Empleado'
-    #rol = models.CharField(max_length=1, choices=COORDINACIONES,default='02')
 
-    # Lo que me va a retornar al hacer un query, para que deje de ser "objeto <tecnico>"
-    # def __str__(self):
-    #    return self.nombre
-    # Necesito nombre de la solicitud!!!! D:
 
 
 class Seguimiento(models.Model):
@@ -164,24 +177,31 @@ class Seguimiento(models.Model):
     id_visita = models.ForeignKey(Visita, blank=True, null=True, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=300)
-    adjunto = FilerFileField(null=True)
+    #adjunto = models.FileField(upload_to='documents/', null=True)
 
 
 
-class Acta(Timestampable):
+class Acta(models.Model):
     id_acta = models.CharField(primary_key=True, max_length=7)
     id_visita = models.ForeignKey(Visita,on_delete=models.CASCADE)
     descripcion = models.CharField(max_length=300)
-    #acta = models.FileField(upload_to='img/profile/%Y/%m/')
-
+    
     def __str__(self):
         return self.descripcion
+    
+    
+class Subir_acta(models.Model):
+    id_acta = models.ForeignKey(Acta,on_delete=models.CASCADE)
+    #acta = models.FileField(upload_to='documents/%Y/%m/%d', null=True)
+	
+    def __str__(self):
+        return self.id_acta
 
 
 
 class Respuesta(models.Model):
     id_solicitud = models.ForeignKey(Solicitud)
-    respuesta = FilerFileField(null=True)
+    #respuesta = FilerFileField(null=True)
 
 
 class ProcesoSolicitud(Process):
@@ -189,12 +209,13 @@ class ProcesoSolicitud(Process):
     solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
     approved = models.BooleanField(default=True)
     titulo = models.CharField(max_length=250, default='')
+    coordinacion = models.CharField(max_length=1, choices=COORDINACIONES, default='01')
 
-    verificaInfo = models.BooleanField(default=False)
-    infoCompleta = models.BooleanField(default=False)
-    pagoRealizado = models.BooleanField(default=False)
-    agendarVisita = models.DateField(blank=True, null=True)
-    realizaVisita = models.BooleanField(default=False)
+    #verificar_Informacion = models.BooleanField(default=False)
+    informacion_Completa = models.BooleanField(default=False)
+    pago_Realizado = models.BooleanField(default=False)
+    agendar_Visita = models.DateField(blank=True, null=True)
+    realiza_Visita = models.BooleanField(default=False)
     def __str__(self):
         return '%s %s' (self.descripcion, self.titulo)
 
@@ -202,27 +223,27 @@ class ProcesoSolicitud(Process):
 
 
 class ProcesoVisita(Process):
-    #usuario = models.ForeignKey(Empleado, blank=True, null=True)
+    usuario = models.ForeignKey(Empleado, blank=True, null=True)
     solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
     approved = models.BooleanField(default=True)
     visita = models.ForeignKey(Visita, blank=True, null=True)
     titulo = models.CharField(max_length=250, default='')
 
     mayor_a_1000 = models.BooleanField(default=False)
-    requiere_compensar = models.BooleanField(default=False)
-    agendarVisita = models.DateField(blank=True, null=True)
+    visto_bueno = models.BooleanField(default=False)
+    requiere_compensar = models.BooleanField(default=False)    
     realizaVisita = models.BooleanField(default=False)
 
 
 class ProcesoCompensacion(Process):
-    #usuario = models.ForeignKey(Empleado, blank=True, null=True)
+    usuario = models.ForeignKey(Empleado, blank=True, null=True)
     solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
     approved = models.BooleanField(default=True)
     visita = models.ForeignKey(Visita, blank=True, null=True)
     titulo = models.CharField(max_length=250, default='')
-
-    mayor_a_1000 = models.BooleanField(default=False)
-    requiere_compensar = models.BooleanField(default=False)
+    
+    compensacion_economica = models.BooleanField(default=False)
+    balance_en_cero = models.BooleanField(default=False)
     agendarVisita = models.DateField(blank=True, null=True)
     realizaVisita = models.BooleanField(default=False)
 
