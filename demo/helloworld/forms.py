@@ -94,5 +94,16 @@ class Seguimiento(forms.ModelForm):
 	class Meta:
 		model = models.Seguimiento
 		fields = '__all__'
+
+
+class Notificacion(forms.ModelForm):
+	class Meta:
+		model = models.Notificacion
+		fields = '__all__'
+
+class ActaRequerimiento(forms.ModelForm):
+    class Meta:
+        model = models.ActaRequerimiento
+        fields = '__all__'
         
         

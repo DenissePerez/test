@@ -263,9 +263,53 @@ def seguimiento(request, **kwargs):
         'form': form,
         'activation': request.activation
     })
-    
-    
-    
+
+
+@flow_view
+# vista que importa el formulario respuesta
+def notificacion(request, **kwargs):
+    request.activation.prepare(request.POST or None, user=request.user)
+    form = forms.Notificacion(request.POST or None)
+
+    if form.is_valid():
+        sample = form.save(commit=False)
+        sample.balance = form.cleaned_data['id_notificacion']
+        sample.taken_by = request.user
+        sample.save()
+
+        request.activation.process.sample = sample
+        request.activation.done()
+
+        return redirect(get_next_task_url(request, request.activation.process))
+
+    return render(request, 'sample2.html', {
+        'form': form,
+        'activation': request.activation
+    })
+
+@flow_view
+# vista que importa el formulario respuesta
+def ActaRequerimiento(request, **kwargs):
+    request.activation.prepare(request.POST or None, user=request.user)
+    form = forms.ActaRequerimiento(request.POST or None)
+
+    if form.is_valid():
+        sample = form.save(commit=False)
+        sample.balance = form.cleaned_data['id_acta']
+        sample.taken_by = request.user
+        sample.save()
+
+        request.activation.process.sample = sample
+        request.activation.done()
+
+        return redirect(get_next_task_url(request, request.activation.process))
+
+    return render(request, 'sample2.html', {
+        'form': form,
+        'activation': request.activation
+    })
+
+
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse

@@ -53,12 +53,12 @@ class ProcesoSolicitud(Flow):
             .Next(this.Verificar)
     )
 
-    check_approve3 = (
-        flow.If(lambda
-                    activation: activation.process.usuario.username == 'tecnico_flora')  # toca verificar si es un tecnico
-            .Then(this.Verificar)
-            .Else(this.end)
-    )
+    # check_approve3 = (
+    #     flow.If(lambda
+    #                 activation: activation.process.usuario.username == 'tecnico_flora')  # toca verificar si es un tecnico
+    #         .Then(this.Verificar)
+    #         .Else(this.end)
+    # )
 
     Verificar = (
         flow.View(
@@ -67,7 +67,7 @@ class ProcesoSolicitud(Flow):
         ).Permission(
             auto_create=True
         )
-            .Assign(lambda activation: activation.process.usuario)
+            #.Assign(lambda activation: activation.process.usuario)
             .Next(this.check_approve2)
     )
 
@@ -79,10 +79,9 @@ class ProcesoSolicitud(Flow):
 
     actaRequerimiento = (
         flow.View(
-            UpdateProcessView,
-            fields=["informacion_Completa", "pago_Realizado"]
+            views.ActaRequerimiento,
         )
-            .Assign(lambda activation: activation.process.usuario)
+            #.Assign(lambda activation: activation.process.usuario)
             .Next(this.Verificar)
 
     )
@@ -90,8 +89,8 @@ class ProcesoSolicitud(Flow):
     AgVisita = (
         flow.View(
             UpdateProcessView,
-            fields=["agendarVisita"])
-            .Assign(lambda activation: activation.process.usuario)
+            fields=["agendar_Visita"])
+            #.Assign(lambda activation: activation.process.usuario)
             .Next(this.end)
 
     )
@@ -298,6 +297,87 @@ class Compensacion(Flow):
             views.seguimiento,
         ).Next(this.end)
     )
+
+    end = flow.End()
+
+@frontend.register
+class Seguimiento(Flow):
+    """    
+    Seguimiento a Compensaciones.
+    """
+    process_class = models.ProcesoSeguimiento
+    # lock_impl = lock.select_for_update_lock
+
+    summary_template = "'{{ process.titulo }}'"
+
+    Iniciar = (
+        flow.Start(
+            CreateProcessView,
+            fields=['titulo']
+        ).Next(this.estado)
+        )
+
+    estado = (
+        flow.View(
+            UpdateProcessView,
+            fields=["arboles_en_buen_estado"]
+        ).Permission(
+            auto_create=True
+        )  # .Assign(username__contains='tecnico_flora')
+            .Next(this.check_compensacion)
+    )
+
+    check_compensacion = (
+        flow.If(lambda activation: activation.process.arboles_en_buen_estado)
+            .Then(this.verificar_tiempo)
+            .Else(this.notificar)
+    )
+
+    notificar = (
+        flow.View(
+            views.notificacion,
+        ).Permission(
+            auto_create=True
+        ).Next(this.end)
+    )
+
+    verificar_tiempo = (
+        flow.View(
+            UpdateProcessView,
+            fields=["tiempo_cumplido"]
+        ).Permission(
+            auto_create=True
+        )  # .Assign(username__contains='tecnico_flora')
+            .Next(this.check_tiempo)
+    )
+
+
+    check_tiempo = (
+        flow.If(lambda activation: activation.process.tiempo_cumplido)
+            .Then(this.paz_y_salvo)
+            .Else(this.agendar_visita)
+    )
+
+    paz_y_salvo = (
+        flow.View(
+            views.paz_y_salvo,
+        )
+            #task_description="Requiere aprobacion",
+            #task_result_summary="La tarea ha sido {{ process.approved|yesno:'Approved,Rejected' }}")
+            .Permission(auto_create=True)
+            .Next(this.end)
+    )
+
+    agendar_visita = (
+        flow.View(
+            UpdateProcessView,
+            fields=["agendarVisita"]
+        ).Permission(
+            auto_create=True
+        )  # .Assign(lambda activation: activation.process.balance_en_cero)
+            .Next(this.end)
+    )
+
 
     end = flow.End()
 

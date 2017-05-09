@@ -165,7 +165,6 @@ class Empleado(CustomUser):
     solicitud = models.ManyToManyField(Solicitud, blank=True)
     id_visita = models.ForeignKey(Visita, blank=True, null=True, on_delete=models.CASCADE)
 
-
     class Meta:
         verbose_name = 'Empleado'
 
@@ -214,7 +213,7 @@ class ProcesoSolicitud(Process):
     #verificar_Informacion = models.BooleanField(default=False)
     informacion_Completa = models.BooleanField(default=False)
     pago_Realizado = models.BooleanField(default=False)
-    agendar_Visita = models.DateField(blank=True, null=True)
+    agendar_Visita = models.DateTimeField(blank=True, null=True)
     realiza_Visita = models.BooleanField(default=False)
     def __str__(self):
         return '%s %s' (self.descripcion, self.titulo)
@@ -248,6 +247,24 @@ class ProcesoCompensacion(Process):
     realizaVisita = models.BooleanField(default=False)
 
 
+class Notificacion(models.Model):
+    id_notificacion = models.CharField(primary_key=True, max_length=7)
+    solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
+    descripcion = models.CharField(max_length=400, default='')
 
 
+class ActaRequerimiento(models.Model):
+    id_acta = models.CharField(primary_key=True, max_length=7)
+    solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
+
+
+class ProcesoSeguimiento(Process):
+    usuario = models.ForeignKey(Empleado, blank=True, null=True)
+    notificacion = models.ForeignKey(Notificacion, blank=True, null=True)
+    solicitud = models.ForeignKey(Solicitud, blank=True, null=True)
+    titulo = models.CharField(max_length=250, default='')
+
+    agendarVisita = models.DateField(blank=True, null=True)
+    arboles_en_buen_estado = models.BooleanField(default=False)
+    tiempo_cumplido = models.BooleanField(default=False)
 

@@ -1,0 +1,3351 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "frontend",
+    "model": "module"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "viewflow",
+    "model": "task"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "viewflow",
+    "model": "process"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "informe_tecnico"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "paz_y_salvo"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "recaudo"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "ficha_individuo"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "expediente"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "agendarvisita"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 16,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "resolucion"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 17,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "acta"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 18,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "subir_acta"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 19,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "customuser"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 20,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "balance"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 21,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "visita"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 22,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "seguimiento"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 23,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "respuesta"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 24,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "anexo"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 25,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "solicitud"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 26,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "empleado"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 27,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "procesocompensacion"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 28,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "procesovisita"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 29,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "procesosolicitud"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 30,
+  "fields": {
+    "app_label": "helloworld",
+    "model": "procesoprueba"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 31,
+  "fields": {
+    "app_label": "easy_thumbnails",
+    "model": "thumbnaildimensions"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 32,
+  "fields": {
+    "app_label": "easy_thumbnails",
+    "model": "thumbnail"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 33,
+  "fields": {
+    "app_label": "easy_thumbnails",
+    "model": "source"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 34,
+  "fields": {
+    "app_label": "filer",
+    "model": "thumbnailoption"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 35,
+  "fields": {
+    "app_label": "filer",
+    "model": "file"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 36,
+  "fields": {
+    "app_label": "filer",
+    "model": "clipboard"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 37,
+  "fields": {
+    "app_label": "filer",
+    "model": "clipboarditem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 38,
+  "fields": {
+    "app_label": "filer",
+    "model": "folderpermission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 39,
+  "fields": {
+    "app_label": "filer",
+    "model": "folder"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 40,
+  "fields": {
+    "app_label": "filer",
+    "model": "image"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "k5683apszzdit1e44nb2fulxm3kn85ni",
+  "fields": {
+    "session_data": "OTE0MDBiZGVkNTM4NjQ1NmEwNDhkYTI4NzMwYzBhZGE3MTYyMjM1ZDp7Il9hdXRoX3VzZXJfaGFzaCI6IjQ2ZjkxMjNiYWI5NzZmZjhmMmRmYWI2ZDlhYTU0MGZmZTU5NzlkN2EiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=",
+    "expire_date": "2017-05-20T14:49:15.872Z"
+  }
+},
+{
+  "model": "frontend.module",
+  "pk": 1,
+  "fields": {
+    "label": "viewflow_frontend",
+    "installed": true
+  }
+},
+{
+  "model": "frontend.module",
+  "pk": 2,
+  "fields": {
+    "label": "material_admin",
+    "installed": true
+  }
+},
+{
+  "model": "viewflow.process",
+  "pk": 1,
+  "fields": {
+    "flow_class": "helloworld/flows.HelloWorldFlow",
+    "status": "DONE",
+    "created": "2017-05-06T14:50:43.495Z",
+    "finished": "2017-05-06T15:23:50.339Z"
+  }
+},
+{
+  "model": "viewflow.process",
+  "pk": 2,
+  "fields": {
+    "flow_class": "helloworld/flows.Compensacion",
+    "status": "DONE",
+    "created": "2017-05-06T15:37:58.106Z",
+    "finished": "2017-05-08T12:34:07.193Z"
+  }
+},
+{
+  "model": "viewflow.process",
+  "pk": 3,
+  "fields": {
+    "flow_class": "helloworld/flows.HelloWorldFlow",
+    "status": "NEW",
+    "created": "2017-05-06T17:08:50.875Z",
+    "finished": null
+  }
+},
+{
+  "model": "viewflow.process",
+  "pk": 4,
+  "fields": {
+    "flow_class": "helloworld/flows.ProcesoSolicitud",
+    "status": "NEW",
+    "created": "2017-05-07T20:20:14.761Z",
+    "finished": null
+  }
+},
+{
+  "model": "viewflow.process",
+  "pk": 5,
+  "fields": {
+    "flow_class": "helloworld/flows.HelloWorldFlow",
+    "status": "DONE",
+    "created": "2017-05-07T20:32:43.469Z",
+    "finished": "2017-05-07T20:36:58.335Z"
+  }
+},
+{
+  "model": "viewflow.process",
+  "pk": 6,
+  "fields": {
+    "flow_class": "helloworld/flows.Compensacion",
+    "status": "DONE",
+    "created": "2017-05-07T20:37:17.512Z",
+    "finished": "2017-05-07T20:43:04.435Z"
+  }
+},
+{
+  "model": "viewflow.process",
+  "pk": 7,
+  "fields": {
+    "flow_class": "helloworld/flows.Compensacion",
+    "status": "NEW",
+    "created": "2017-05-08T12:11:23.245Z",
+    "finished": null
+  }
+},
+{
+  "model": "viewflow.process",
+  "pk": 8,
+  "fields": {
+    "flow_class": "helloworld/flows.ProcesoSolicitud",
+    "status": "NEW",
+    "created": "2017-05-08T12:20:51.619Z",
+    "finished": null
+  }
+},
+{
+  "model": "helloworld.resolucion",
+  "pk": "001",
+  "fields": {
+    "nombre": "Resoluci\u00f3n 001"
+  }
+},
+{
+  "model": "helloworld.resolucion",
+  "pk": "003",
+  "fields": {
+    "nombre": "res 003"
+  }
+},
+{
+  "model": "helloworld.paz_y_salvo",
+  "pk": "003",
+  "fields": {
+    "nombre": "paz y salvo empresa x"
+  }
+},
+{
+  "model": "helloworld.solicitud",
+  "pk": "R201704225",
+  "fields": {
+    "nombre_solicitate": "oscar novoa",
+    "identificacion_solicitate": "1098755689",
+    "direccion_solicitate": "calle falsa 123",
+    "barrio_solicitate": "spriengfield",
+    "nombre": "Solicitud translado por da\u00f1oa arbol",
+    "id_expediente": null,
+    "direccion_solicitud": "calle falsa 123 esquina",
+    "barrio_solicitud": "calle falsa 123",
+    "municipio": "calle falsa 123",
+    "fecha": "2017-05-07",
+    "fecha_respuesta": "2017-05-25",
+    "approved": false
+  }
+},
+{
+  "model": "helloworld.ficha_individuo",
+  "pk": "A001",
+  "fields": {
+    "latitud": "15.000035",
+    "longitud": "-56.000004",
+    "nombre": "Ceiba",
+    "familia": "Bombacaceae",
+    "estado": "Estado optimo",
+    "altura": 2.35,
+    "dap": 0.56,
+    "valor": "83457.24"
+  }
+},
+{
+  "model": "helloworld.seguimiento",
+  "pk": "001",
+  "fields": {
+    "id_balance": null,
+    "id_visita": null,
+    "nombre": "001",
+    "descripcion": "001"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 2,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 2,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 2,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 4,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 4,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 4,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can add module",
+    "content_type": 7,
+    "codename": "add_module"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can change module",
+    "content_type": 7,
+    "codename": "change_module"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can delete module",
+    "content_type": 7,
+    "codename": "delete_module"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can add task",
+    "content_type": 8,
+    "codename": "add_task"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can change task",
+    "content_type": 8,
+    "codename": "change_task"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can delete task",
+    "content_type": 8,
+    "codename": "delete_task"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add process",
+    "content_type": 9,
+    "codename": "add_process"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change process",
+    "content_type": 9,
+    "codename": "change_process"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete process",
+    "content_type": 9,
+    "codename": "delete_process"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view process",
+    "content_type": 9,
+    "codename": "view_process"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can manage process",
+    "content_type": 9,
+    "codename": "manage_process"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can add informe_tecnico",
+    "content_type": 10,
+    "codename": "add_informe_tecnico"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can change informe_tecnico",
+    "content_type": 10,
+    "codename": "change_informe_tecnico"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can delete informe_tecnico",
+    "content_type": 10,
+    "codename": "delete_informe_tecnico"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add paz_y_salvo",
+    "content_type": 11,
+    "codename": "add_paz_y_salvo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change paz_y_salvo",
+    "content_type": 11,
+    "codename": "change_paz_y_salvo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete paz_y_salvo",
+    "content_type": 11,
+    "codename": "delete_paz_y_salvo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can add recaudo",
+    "content_type": 12,
+    "codename": "add_recaudo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can change recaudo",
+    "content_type": 12,
+    "codename": "change_recaudo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can delete recaudo",
+    "content_type": 12,
+    "codename": "delete_recaudo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can add ficha_individuo",
+    "content_type": 13,
+    "codename": "add_ficha_individuo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can change ficha_individuo",
+    "content_type": 13,
+    "codename": "change_ficha_individuo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can delete ficha_individuo",
+    "content_type": 13,
+    "codename": "delete_ficha_individuo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can add expediente",
+    "content_type": 14,
+    "codename": "add_expediente"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can change expediente",
+    "content_type": 14,
+    "codename": "change_expediente"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can delete expediente",
+    "content_type": 14,
+    "codename": "delete_expediente"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add agendar visita",
+    "content_type": 15,
+    "codename": "add_agendarvisita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change agendar visita",
+    "content_type": 15,
+    "codename": "change_agendarvisita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete agendar visita",
+    "content_type": 15,
+    "codename": "delete_agendarvisita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can add resolucion",
+    "content_type": 16,
+    "codename": "add_resolucion"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can change resolucion",
+    "content_type": 16,
+    "codename": "change_resolucion"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can delete resolucion",
+    "content_type": 16,
+    "codename": "delete_resolucion"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can add acta",
+    "content_type": 17,
+    "codename": "add_acta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can change acta",
+    "content_type": 17,
+    "codename": "change_acta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can delete acta",
+    "content_type": 17,
+    "codename": "delete_acta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can add subir_acta",
+    "content_type": 18,
+    "codename": "add_subir_acta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can change subir_acta",
+    "content_type": 18,
+    "codename": "change_subir_acta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can delete subir_acta",
+    "content_type": 18,
+    "codename": "delete_subir_acta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 19,
+    "codename": "add_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 19,
+    "codename": "change_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 19,
+    "codename": "delete_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can add balance",
+    "content_type": 20,
+    "codename": "add_balance"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can change balance",
+    "content_type": 20,
+    "codename": "change_balance"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can delete balance",
+    "content_type": 20,
+    "codename": "delete_balance"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can add visita",
+    "content_type": 21,
+    "codename": "add_visita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can change visita",
+    "content_type": 21,
+    "codename": "change_visita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can delete visita",
+    "content_type": 21,
+    "codename": "delete_visita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can add seguimiento",
+    "content_type": 22,
+    "codename": "add_seguimiento"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can change seguimiento",
+    "content_type": 22,
+    "codename": "change_seguimiento"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can delete seguimiento",
+    "content_type": 22,
+    "codename": "delete_seguimiento"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add respuesta",
+    "content_type": 23,
+    "codename": "add_respuesta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change respuesta",
+    "content_type": 23,
+    "codename": "change_respuesta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete respuesta",
+    "content_type": 23,
+    "codename": "delete_respuesta"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can add anexo",
+    "content_type": 24,
+    "codename": "add_anexo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 73,
+  "fields": {
+    "name": "Can change anexo",
+    "content_type": 24,
+    "codename": "change_anexo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 74,
+  "fields": {
+    "name": "Can delete anexo",
+    "content_type": 24,
+    "codename": "delete_anexo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 75,
+  "fields": {
+    "name": "Can add solicitud",
+    "content_type": 25,
+    "codename": "add_solicitud"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 76,
+  "fields": {
+    "name": "Can change solicitud",
+    "content_type": 25,
+    "codename": "change_solicitud"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 77,
+  "fields": {
+    "name": "Can delete solicitud",
+    "content_type": 25,
+    "codename": "delete_solicitud"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 78,
+  "fields": {
+    "name": "Can add Empleado",
+    "content_type": 26,
+    "codename": "add_empleado"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 79,
+  "fields": {
+    "name": "Can change Empleado",
+    "content_type": 26,
+    "codename": "change_empleado"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 80,
+  "fields": {
+    "name": "Can delete Empleado",
+    "content_type": 26,
+    "codename": "delete_empleado"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 81,
+  "fields": {
+    "name": "Can add proceso compensacion",
+    "content_type": 27,
+    "codename": "add_procesocompensacion"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 82,
+  "fields": {
+    "name": "Can change proceso compensacion",
+    "content_type": 27,
+    "codename": "change_procesocompensacion"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 83,
+  "fields": {
+    "name": "Can delete proceso compensacion",
+    "content_type": 27,
+    "codename": "delete_procesocompensacion"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 84,
+  "fields": {
+    "name": "Can add proceso visita",
+    "content_type": 28,
+    "codename": "add_procesovisita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 85,
+  "fields": {
+    "name": "Can change proceso visita",
+    "content_type": 28,
+    "codename": "change_procesovisita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 86,
+  "fields": {
+    "name": "Can delete proceso visita",
+    "content_type": 28,
+    "codename": "delete_procesovisita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 87,
+  "fields": {
+    "name": "Can add proceso solicitud",
+    "content_type": 29,
+    "codename": "add_procesosolicitud"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 88,
+  "fields": {
+    "name": "Can change proceso solicitud",
+    "content_type": 29,
+    "codename": "change_procesosolicitud"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 89,
+  "fields": {
+    "name": "Can delete proceso solicitud",
+    "content_type": 29,
+    "codename": "delete_procesosolicitud"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 90,
+  "fields": {
+    "name": "Can add proceso prueba",
+    "content_type": 30,
+    "codename": "add_procesoprueba"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 91,
+  "fields": {
+    "name": "Can change proceso prueba",
+    "content_type": 30,
+    "codename": "change_procesoprueba"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 92,
+  "fields": {
+    "name": "Can delete proceso prueba",
+    "content_type": 30,
+    "codename": "delete_procesoprueba"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 93,
+  "fields": {
+    "name": "Can view proceso solicitud",
+    "content_type": 29,
+    "codename": "view_procesosolicitud"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 94,
+  "fields": {
+    "name": "Can manage proceso solicitud",
+    "content_type": 29,
+    "codename": "manage_procesosolicitud"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 95,
+  "fields": {
+    "name": "Can asignar",
+    "content_type": 29,
+    "codename": "can_asignar_procesosolicitud"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 96,
+  "fields": {
+    "name": "Can Iniciar",
+    "content_type": 29,
+    "codename": "can_Iniciar_procesosolicitud"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 97,
+  "fields": {
+    "name": "Can Verificar",
+    "content_type": 29,
+    "codename": "can_Verificar_procesosolicitud"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 98,
+  "fields": {
+    "name": "Can setDependencia",
+    "content_type": 29,
+    "codename": "can_setDependencia_procesosolicitud"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 99,
+  "fields": {
+    "name": "Can view proceso visita",
+    "content_type": 28,
+    "codename": "view_procesovisita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 100,
+  "fields": {
+    "name": "Can manage proceso visita",
+    "content_type": 28,
+    "codename": "manage_procesovisita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 101,
+  "fields": {
+    "name": "Can compensa",
+    "content_type": 28,
+    "codename": "can_compensa_procesovisita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 102,
+  "fields": {
+    "name": "Can biomasa",
+    "content_type": 28,
+    "codename": "can_biomasa_procesovisita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 103,
+  "fields": {
+    "name": "Can approve",
+    "content_type": 28,
+    "codename": "can_approve_procesovisita"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 104,
+  "fields": {
+    "name": "Can view proceso compensacion",
+    "content_type": 27,
+    "codename": "view_procesocompensacion"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 105,
+  "fields": {
+    "name": "Can manage proceso compensacion",
+    "content_type": 27,
+    "codename": "manage_procesocompensacion"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 106,
+  "fields": {
+    "name": "Can balance",
+    "content_type": 27,
+    "codename": "can_balance_procesocompensacion"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 107,
+  "fields": {
+    "name": "Can tipo compensacion",
+    "content_type": 27,
+    "codename": "can_tipo_compensacion_procesocompensacion"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 108,
+  "fields": {
+    "name": "Can balance en cero",
+    "content_type": 27,
+    "codename": "can_balance_en_cero_procesocompensacion"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 109,
+  "fields": {
+    "name": "Can add thumbnail dimensions",
+    "content_type": 31,
+    "codename": "add_thumbnaildimensions"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 110,
+  "fields": {
+    "name": "Can change thumbnail dimensions",
+    "content_type": 31,
+    "codename": "change_thumbnaildimensions"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 111,
+  "fields": {
+    "name": "Can delete thumbnail dimensions",
+    "content_type": 31,
+    "codename": "delete_thumbnaildimensions"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 112,
+  "fields": {
+    "name": "Can add thumbnail",
+    "content_type": 32,
+    "codename": "add_thumbnail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 113,
+  "fields": {
+    "name": "Can change thumbnail",
+    "content_type": 32,
+    "codename": "change_thumbnail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 114,
+  "fields": {
+    "name": "Can delete thumbnail",
+    "content_type": 32,
+    "codename": "delete_thumbnail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 115,
+  "fields": {
+    "name": "Can add source",
+    "content_type": 33,
+    "codename": "add_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 116,
+  "fields": {
+    "name": "Can change source",
+    "content_type": 33,
+    "codename": "change_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 117,
+  "fields": {
+    "name": "Can delete source",
+    "content_type": 33,
+    "codename": "delete_source"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 118,
+  "fields": {
+    "name": "Can add thumbnail option",
+    "content_type": 34,
+    "codename": "add_thumbnailoption"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 119,
+  "fields": {
+    "name": "Can change thumbnail option",
+    "content_type": 34,
+    "codename": "change_thumbnailoption"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 120,
+  "fields": {
+    "name": "Can delete thumbnail option",
+    "content_type": 34,
+    "codename": "delete_thumbnailoption"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 121,
+  "fields": {
+    "name": "Can add file",
+    "content_type": 35,
+    "codename": "add_file"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 122,
+  "fields": {
+    "name": "Can change file",
+    "content_type": 35,
+    "codename": "change_file"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 123,
+  "fields": {
+    "name": "Can delete file",
+    "content_type": 35,
+    "codename": "delete_file"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 124,
+  "fields": {
+    "name": "Can add clipboard",
+    "content_type": 36,
+    "codename": "add_clipboard"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 125,
+  "fields": {
+    "name": "Can change clipboard",
+    "content_type": 36,
+    "codename": "change_clipboard"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 126,
+  "fields": {
+    "name": "Can delete clipboard",
+    "content_type": 36,
+    "codename": "delete_clipboard"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 127,
+  "fields": {
+    "name": "Can add clipboard item",
+    "content_type": 37,
+    "codename": "add_clipboarditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 128,
+  "fields": {
+    "name": "Can change clipboard item",
+    "content_type": 37,
+    "codename": "change_clipboarditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 129,
+  "fields": {
+    "name": "Can delete clipboard item",
+    "content_type": 37,
+    "codename": "delete_clipboarditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 130,
+  "fields": {
+    "name": "Can add folder permission",
+    "content_type": 38,
+    "codename": "add_folderpermission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 131,
+  "fields": {
+    "name": "Can change folder permission",
+    "content_type": 38,
+    "codename": "change_folderpermission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 132,
+  "fields": {
+    "name": "Can delete folder permission",
+    "content_type": 38,
+    "codename": "delete_folderpermission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 133,
+  "fields": {
+    "name": "Can add Folder",
+    "content_type": 39,
+    "codename": "add_folder"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 134,
+  "fields": {
+    "name": "Can change Folder",
+    "content_type": 39,
+    "codename": "change_folder"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 135,
+  "fields": {
+    "name": "Can delete Folder",
+    "content_type": 39,
+    "codename": "delete_folder"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 136,
+  "fields": {
+    "name": "Can use directory listing",
+    "content_type": 39,
+    "codename": "can_use_directory_listing"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 137,
+  "fields": {
+    "name": "Can add image",
+    "content_type": 40,
+    "codename": "add_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 138,
+  "fields": {
+    "name": "Can change image",
+    "content_type": 40,
+    "codename": "change_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 139,
+  "fields": {
+    "name": "Can delete image",
+    "content_type": 40,
+    "codename": "delete_image"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$oAPup3aTs8lI$oXEuUU5Vc++n0Kgd/FoDzPi6yZ7WLdZHW4mYL5AOkFE=",
+    "last_login": "2017-05-06T14:49:15.786Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@admin.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2017-05-06T14:48:58.252Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "coordinador",
+    "last_login": "2017-05-08T12:23:56Z",
+    "is_superuser": false,
+    "username": "CoordinadorFlora",
+    "first_name": "Cesar",
+    "last_name": "Garcia",
+    "email": "cesargarcia@coordinacionflora.amb",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-05-08T12:22:49Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "tecnico",
+    "last_login": "2017-05-08T12:24:52Z",
+    "is_superuser": false,
+    "username": "tecnico_flora",
+    "first_name": "manuel",
+    "last_name": "Casta\u00f1eda",
+    "email": "mcastaneda@floraamb.gov.co",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-05-08T12:24:33Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "secretariaamb",
+    "last_login": "2017-05-08T16:31:32Z",
+    "is_superuser": true,
+    "username": "secretaria",
+    "first_name": "Catalina",
+    "last_name": "Cano",
+    "email": "ccano@ambiental.gov.co",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2017-05-08T16:31:21Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "usuarioprueba",
+    "last_login": "2017-05-08T16:31:32Z",
+    "is_superuser": true,
+    "username": "testusr",
+    "first_name": "usuario",
+    "last_name": "prueba",
+    "email": "uprueba@ambiental.gov.co",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2017-05-08T16:31:21Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 1,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.Iniciar",
+    "flow_task_type": "START",
+    "status": "DONE",
+    "created": "2017-05-06T14:50:43.576Z",
+    "started": "2017-05-06T14:49:20.848Z",
+    "finished": "2017-05-06T14:50:43.576Z",
+    "token": "start",
+    "process": 1,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": []
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 2,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.Inicio",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-06T14:50:43.612Z",
+    "started": "2017-05-06T14:50:46.398Z",
+    "finished": "2017-05-06T14:50:56.670Z",
+    "token": "start",
+    "process": 1,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      1
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 3,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.approve",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-06T14:50:56.702Z",
+    "started": "2017-05-06T14:50:59.423Z",
+    "finished": "2017-05-06T14:51:09.964Z",
+    "token": "start",
+    "process": 1,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_approve_procesovisita",
+    "comments": null,
+    "previous": [
+      2
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 4,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.biomasa",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-06T14:51:10.014Z",
+    "started": "2017-05-06T14:51:12.303Z",
+    "finished": "2017-05-06T14:51:18.590Z",
+    "token": "start",
+    "process": 1,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_biomasa_procesovisita",
+    "comments": null,
+    "previous": [
+      3
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 5,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.check_approve",
+    "flow_task_type": "IF",
+    "status": "DONE",
+    "created": "2017-05-06T14:51:18.612Z",
+    "started": "2017-05-06T14:51:18.667Z",
+    "finished": "2017-05-06T14:51:18.679Z",
+    "token": "start",
+    "process": 1,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      4
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 6,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.informe",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-06T14:51:18.727Z",
+    "started": "2017-05-06T14:56:01.668Z",
+    "finished": "2017-05-06T14:57:28.035Z",
+    "token": "start",
+    "process": 1,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      5
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 7,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.aprobar_informe",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-06T14:57:28.066Z",
+    "started": "2017-05-06T14:57:30.659Z",
+    "finished": "2017-05-06T14:57:41.814Z",
+    "token": "start",
+    "process": 1,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      6
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 8,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.verificar_visto_informe",
+    "flow_task_type": "IF",
+    "status": "DONE",
+    "created": "2017-05-06T14:57:41.836Z",
+    "started": "2017-05-06T14:57:41.890Z",
+    "finished": "2017-05-06T14:57:41.902Z",
+    "token": "start",
+    "process": 1,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      7
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 9,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.resolucion",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-06T14:57:41.939Z",
+    "started": "2017-05-06T14:59:01.719Z",
+    "finished": "2017-05-06T14:59:12.027Z",
+    "token": "start",
+    "process": 1,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      8
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 10,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.compensar",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-06T14:59:12.078Z",
+    "started": "2017-05-06T14:59:14.279Z",
+    "finished": "2017-05-06T15:23:50.250Z",
+    "token": "start",
+    "process": 1,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      9
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 11,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.end",
+    "flow_task_type": "END",
+    "status": "DONE",
+    "created": "2017-05-06T15:23:50.271Z",
+    "started": "2017-05-06T15:23:50.319Z",
+    "finished": "2017-05-06T15:23:50.360Z",
+    "token": "start",
+    "process": 1,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      10
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 12,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.Iniciar",
+    "flow_task_type": "START",
+    "status": "DONE",
+    "created": "2017-05-06T15:37:58.186Z",
+    "started": "2017-05-06T15:37:47.635Z",
+    "finished": "2017-05-06T15:37:58.185Z",
+    "token": "start",
+    "process": 2,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": []
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 13,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.tipo_compensacion",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-06T15:37:58.220Z",
+    "started": "2017-05-06T15:38:03.927Z",
+    "finished": "2017-05-06T15:38:07.724Z",
+    "token": "start",
+    "process": 2,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_tipo_compensacion_procesocompensacion",
+    "comments": null,
+    "previous": [
+      12
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 14,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.check_compensacion",
+    "flow_task_type": "IF",
+    "status": "DONE",
+    "created": "2017-05-06T15:38:07.746Z",
+    "started": "2017-05-06T15:38:07.800Z",
+    "finished": "2017-05-06T15:38:07.812Z",
+    "token": "start",
+    "process": 2,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      13
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 15,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.agendar_visita",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-06T15:38:07.851Z",
+    "started": "2017-05-08T12:33:54.576Z",
+    "finished": "2017-05-08T12:34:07.105Z",
+    "token": "start",
+    "process": 2,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      14
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 16,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.Iniciar",
+    "flow_task_type": "START",
+    "status": "DONE",
+    "created": "2017-05-06T17:08:50.952Z",
+    "started": "2017-05-06T17:08:40.857Z",
+    "finished": "2017-05-06T17:08:50.952Z",
+    "token": "start",
+    "process": 3,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": []
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 17,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.Inicio",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-06T17:08:50.987Z",
+    "started": "2017-05-06T17:08:54.596Z",
+    "finished": "2017-05-06T17:09:07.021Z",
+    "token": "start",
+    "process": 3,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      16
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 18,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.approve",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-06T17:09:07.050Z",
+    "started": "2017-05-06T17:10:01.751Z",
+    "finished": "2017-05-06T17:10:15.996Z",
+    "token": "start",
+    "process": 3,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_approve_procesovisita",
+    "comments": null,
+    "previous": [
+      17
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 19,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.biomasa",
+    "flow_task_type": "HUMAN",
+    "status": "NEW",
+    "created": "2017-05-06T17:10:16.025Z",
+    "started": null,
+    "finished": null,
+    "token": "start",
+    "process": 3,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_biomasa_procesovisita",
+    "comments": null,
+    "previous": [
+      18
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 20,
+  "fields": {
+    "flow_task": "helloworld/flows.ProcesoSolicitud.Iniciar_Proceso",
+    "flow_task_type": "START",
+    "status": "DONE",
+    "created": "2017-05-07T20:20:14.955Z",
+    "started": "2017-05-07T20:19:55.531Z",
+    "finished": "2017-05-07T20:20:14.954Z",
+    "token": "start",
+    "process": 4,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": []
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 21,
+  "fields": {
+    "flow_task": "helloworld/flows.ProcesoSolicitud.Iniciar",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:20:14.989Z",
+    "started": "2017-05-07T20:20:28.059Z",
+    "finished": "2017-05-07T20:22:30.410Z",
+    "token": "start",
+    "process": 4,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_Iniciar_procesosolicitud",
+    "comments": null,
+    "previous": [
+      20
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 22,
+  "fields": {
+    "flow_task": "helloworld/flows.ProcesoSolicitud.setDependencia",
+    "flow_task_type": "HUMAN",
+    "status": "ASSIGNED",
+    "created": "2017-05-07T20:22:30.439Z",
+    "started": null,
+    "finished": null,
+    "token": "start",
+    "process": 4,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_setDependencia_procesosolicitud",
+    "comments": null,
+    "previous": [
+      21
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 23,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.Iniciar",
+    "flow_task_type": "START",
+    "status": "DONE",
+    "created": "2017-05-07T20:32:43.549Z",
+    "started": "2017-05-07T20:32:35.785Z",
+    "finished": "2017-05-07T20:32:43.548Z",
+    "token": "start",
+    "process": 5,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": []
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 24,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.Inicio",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:32:43.583Z",
+    "started": "2017-05-07T20:32:46.041Z",
+    "finished": "2017-05-07T20:33:03.265Z",
+    "token": "start",
+    "process": 5,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      23
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 25,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.approve",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:33:03.295Z",
+    "started": "2017-05-07T20:33:14.444Z",
+    "finished": "2017-05-07T20:33:42.677Z",
+    "token": "start",
+    "process": 5,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_approve_procesovisita",
+    "comments": null,
+    "previous": [
+      24
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 26,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.biomasa",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:33:42.709Z",
+    "started": "2017-05-07T20:33:44.853Z",
+    "finished": "2017-05-07T20:33:48.264Z",
+    "token": "start",
+    "process": 5,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_biomasa_procesovisita",
+    "comments": null,
+    "previous": [
+      25
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 27,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.check_approve",
+    "flow_task_type": "IF",
+    "status": "DONE",
+    "created": "2017-05-07T20:33:48.286Z",
+    "started": "2017-05-07T20:33:48.394Z",
+    "finished": "2017-05-07T20:33:48.409Z",
+    "token": "start",
+    "process": 5,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      26
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 28,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.informe",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:33:48.492Z",
+    "started": "2017-05-07T20:34:05.976Z",
+    "finished": "2017-05-07T20:34:26.045Z",
+    "token": "start",
+    "process": 5,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      27
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 29,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.aprobar_informe",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:34:26.075Z",
+    "started": "2017-05-07T20:34:58.108Z",
+    "finished": "2017-05-07T20:36:07.857Z",
+    "token": "start",
+    "process": 5,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      28
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 30,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.verificar_visto_informe",
+    "flow_task_type": "IF",
+    "status": "DONE",
+    "created": "2017-05-07T20:36:07.878Z",
+    "started": "2017-05-07T20:36:07.933Z",
+    "finished": "2017-05-07T20:36:07.945Z",
+    "token": "start",
+    "process": 5,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      29
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 31,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.resolucion",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:36:07.984Z",
+    "started": "2017-05-07T20:36:18.302Z",
+    "finished": "2017-05-07T20:36:27.272Z",
+    "token": "start",
+    "process": 5,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      30
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 32,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.compensar",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:36:27.302Z",
+    "started": "2017-05-07T20:36:35.120Z",
+    "finished": "2017-05-07T20:36:58.244Z",
+    "token": "start",
+    "process": 5,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      31
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 33,
+  "fields": {
+    "flow_task": "helloworld/flows.HelloWorldFlow.end",
+    "flow_task_type": "END",
+    "status": "DONE",
+    "created": "2017-05-07T20:36:58.266Z",
+    "started": "2017-05-07T20:36:58.314Z",
+    "finished": "2017-05-07T20:36:58.355Z",
+    "token": "start",
+    "process": 5,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      32
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 34,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.Iniciar",
+    "flow_task_type": "START",
+    "status": "DONE",
+    "created": "2017-05-07T20:37:17.590Z",
+    "started": "2017-05-07T20:37:11.329Z",
+    "finished": "2017-05-07T20:37:17.590Z",
+    "token": "start",
+    "process": 6,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": []
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 35,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.tipo_compensacion",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:37:17.625Z",
+    "started": "2017-05-07T20:37:19.920Z",
+    "finished": "2017-05-07T20:37:54.859Z",
+    "token": "start",
+    "process": 6,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_tipo_compensacion_procesocompensacion",
+    "comments": null,
+    "previous": [
+      34
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 36,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.check_compensacion",
+    "flow_task_type": "IF",
+    "status": "DONE",
+    "created": "2017-05-07T20:37:54.881Z",
+    "started": "2017-05-07T20:37:54.935Z",
+    "finished": "2017-05-07T20:37:54.947Z",
+    "token": "start",
+    "process": 6,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      35
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 37,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.recaudar",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:37:54.985Z",
+    "started": "2017-05-07T20:38:02.128Z",
+    "finished": "2017-05-07T20:40:13.996Z",
+    "token": "start",
+    "process": 6,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      36
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 38,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.balance",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:40:14.027Z",
+    "started": "2017-05-07T20:40:17.149Z",
+    "finished": "2017-05-07T20:40:34.150Z",
+    "token": "start",
+    "process": 6,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_balance_procesocompensacion",
+    "comments": null,
+    "previous": [
+      37
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 39,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.balance_en_cero",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:40:34.180Z",
+    "started": "2017-05-07T20:40:36.441Z",
+    "finished": "2017-05-07T20:40:41.162Z",
+    "token": "start",
+    "process": 6,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_balance_en_cero_procesocompensacion",
+    "comments": null,
+    "previous": [
+      38
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 40,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.check_balance_en_cero",
+    "flow_task_type": "IF",
+    "status": "DONE",
+    "created": "2017-05-07T20:40:41.183Z",
+    "started": "2017-05-07T20:40:41.289Z",
+    "finished": "2017-05-07T20:40:41.314Z",
+    "token": "start",
+    "process": 6,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      39
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 41,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.paz_y_salvo",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-07T20:40:41.371Z",
+    "started": "2017-05-07T20:42:21.439Z",
+    "finished": "2017-05-07T20:43:04.344Z",
+    "token": "start",
+    "process": 6,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      40
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 42,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.end",
+    "flow_task_type": "END",
+    "status": "DONE",
+    "created": "2017-05-07T20:43:04.365Z",
+    "started": "2017-05-07T20:43:04.414Z",
+    "finished": "2017-05-07T20:43:04.455Z",
+    "token": "start",
+    "process": 6,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      41
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 43,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.Iniciar",
+    "flow_task_type": "START",
+    "status": "DONE",
+    "created": "2017-05-08T12:11:23.421Z",
+    "started": "2017-05-08T12:11:17.374Z",
+    "finished": "2017-05-08T12:11:23.420Z",
+    "token": "start",
+    "process": 7,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": []
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 44,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.tipo_compensacion",
+    "flow_task_type": "HUMAN",
+    "status": "ASSIGNED",
+    "created": "2017-05-08T12:11:23.455Z",
+    "started": null,
+    "finished": null,
+    "token": "start",
+    "process": 7,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_tipo_compensacion_procesocompensacion",
+    "comments": null,
+    "previous": [
+      43
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 45,
+  "fields": {
+    "flow_task": "helloworld/flows.ProcesoSolicitud.Iniciar_Proceso",
+    "flow_task_type": "START",
+    "status": "DONE",
+    "created": "2017-05-08T12:20:51.701Z",
+    "started": "2017-05-08T12:20:20.977Z",
+    "finished": "2017-05-08T12:20:51.700Z",
+    "token": "start",
+    "process": 8,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": []
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 46,
+  "fields": {
+    "flow_task": "helloworld/flows.ProcesoSolicitud.Iniciar",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-08T12:20:51.736Z",
+    "started": "2017-05-08T12:20:54.447Z",
+    "finished": "2017-05-08T12:21:37.450Z",
+    "token": "start",
+    "process": 8,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_Iniciar_procesosolicitud",
+    "comments": null,
+    "previous": [
+      45
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 47,
+  "fields": {
+    "flow_task": "helloworld/flows.ProcesoSolicitud.setDependencia",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-08T12:21:37.480Z",
+    "started": "2017-05-08T12:21:40.528Z",
+    "finished": "2017-05-08T12:21:45.220Z",
+    "token": "start",
+    "process": 8,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_setDependencia_procesosolicitud",
+    "comments": null,
+    "previous": [
+      46
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 48,
+  "fields": {
+    "flow_task": "helloworld/flows.ProcesoSolicitud.setDependencia2",
+    "flow_task_type": "IF",
+    "status": "DONE",
+    "created": "2017-05-08T12:21:45.243Z",
+    "started": "2017-05-08T12:21:45.297Z",
+    "finished": "2017-05-08T12:21:45.309Z",
+    "token": "start",
+    "process": 8,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      47
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 49,
+  "fields": {
+    "flow_task": "helloworld/flows.ProcesoSolicitud.asignar",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-08T12:21:45.348Z",
+    "started": "2017-05-08T12:25:42.988Z",
+    "finished": "2017-05-08T12:25:44.822Z",
+    "token": "start",
+    "process": 8,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_asignar_procesosolicitud",
+    "comments": null,
+    "previous": [
+      48
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 50,
+  "fields": {
+    "flow_task": "helloworld/flows.ProcesoSolicitud.Verificar",
+    "flow_task_type": "HUMAN",
+    "status": "DONE",
+    "created": "2017-05-08T12:25:44.857Z",
+    "started": "2017-05-08T12:29:49.747Z",
+    "finished": "2017-05-08T12:30:41.295Z",
+    "token": "start",
+    "process": 8,
+    "owner": 1,
+    "external_task_id": null,
+    "owner_permission": "helloworld.can_Verificar_procesosolicitud",
+    "comments": null,
+    "previous": [
+      49
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 51,
+  "fields": {
+    "flow_task": "helloworld/flows.ProcesoSolicitud.check_approve2",
+    "flow_task_type": "IF",
+    "status": "DONE",
+    "created": "2017-05-08T12:30:41.319Z",
+    "started": "2017-05-08T12:30:41.375Z",
+    "finished": "2017-05-08T12:30:41.387Z",
+    "token": "start",
+    "process": 8,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      50
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 52,
+  "fields": {
+    "flow_task": "helloworld/flows.ProcesoSolicitud.AgVisita",
+    "flow_task_type": "HUMAN",
+    "status": "NEW",
+    "created": "2017-05-08T12:30:41.426Z",
+    "started": null,
+    "finished": null,
+    "token": "start",
+    "process": 8,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      51
+    ]
+  }
+},
+{
+  "model": "viewflow.task",
+  "pk": 53,
+  "fields": {
+    "flow_task": "helloworld/flows.Compensacion.end",
+    "flow_task_type": "END",
+    "status": "DONE",
+    "created": "2017-05-08T12:34:07.124Z",
+    "started": "2017-05-08T12:34:07.172Z",
+    "finished": "2017-05-08T12:34:07.214Z",
+    "token": "start",
+    "process": 2,
+    "owner": null,
+    "external_task_id": null,
+    "owner_permission": null,
+    "comments": null,
+    "previous": [
+      15
+    ]
+  }
+},
+{
+  "model": "helloworld.customuser",
+  "pk": 2,
+  "fields": {
+    "telefono": "3022010587",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "helloworld.customuser",
+  "pk": 3,
+  "fields": {
+    "telefono": "3135209874",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "helloworld.customuser",
+  "pk": 5,
+  "fields": {
+    "telefono": "3135209874",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "helloworld.empleado",
+  "pk": 2,
+  "fields": {
+    "id_visita": null,
+    "groups": [],
+    "user_permissions": [],
+    "solicitud": []
+  }
+},
+{
+  "model": "helloworld.empleado",
+  "pk": 3,
+  "fields": {
+    "id_visita": null,
+    "groups": [],
+    "user_permissions": [],
+    "solicitud": []
+  }
+},
+{
+  "model": "helloworld.empleado",
+  "pk": 5,
+  "fields": {
+    "id_visita": null,
+    "groups": [],
+    "user_permissions": [],
+    "solicitud": []
+  }
+},
+{
+  "model": "helloworld.procesosolicitud",
+  "pk": 8,
+  "fields": {
+    "usuario": null,
+    "solicitud": null,
+    "approved": true,
+    "titulo": "Solicitud R2017",
+    "coordinacion": "1",
+    "informacion_Completa": true,
+    "pago_Realizado": true,
+    "agendar_Visita": null,
+    "realiza_Visita": false
+  }
+},
+{
+  "model": "helloworld.procesosolicitud",
+  "pk": 4,
+  "fields": {
+    "usuario": null,
+    "solicitud": null,
+    "approved": true,
+    "titulo": "Solicitud racidado 207050725",
+    "coordinacion": "01",
+    "informacion_Completa": false,
+    "pago_Realizado": false,
+    "agendar_Visita": null,
+    "realiza_Visita": false
+  }
+},
+{
+  "model": "helloworld.procesovisita",
+  "pk": 5,
+  "fields": {
+    "usuario": null,
+    "solicitud": null,
+    "approved": true,
+    "visita": null,
+    "titulo": "visita de R20170422",
+    "mayor_a_1000": true,
+    "visto_bueno": true,
+    "requiere_compensar": false,
+    "realizaVisita": false
+  }
+},
+{
+  "model": "helloworld.procesovisita",
+  "pk": 3,
+  "fields": {
+    "usuario": null,
+    "solicitud": null,
+    "approved": true,
+    "visita": null,
+    "titulo": "visita de R20170422",
+    "mayor_a_1000": false,
+    "visto_bueno": false,
+    "requiere_compensar": false,
+    "realizaVisita": false
+  }
+},
+{
+  "model": "helloworld.procesovisita",
+  "pk": 1,
+  "fields": {
+    "usuario": null,
+    "solicitud": null,
+    "approved": true,
+    "visita": null,
+    "titulo": "visita de R20170427",
+    "mayor_a_1000": true,
+    "visto_bueno": true,
+    "requiere_compensar": false,
+    "realizaVisita": false
+  }
+},
+{
+  "model": "helloworld.procesocompensacion",
+  "pk": 7,
+  "fields": {
+    "usuario": null,
+    "solicitud": null,
+    "approved": true,
+    "visita": null,
+    "titulo": "flujo1",
+    "compensacion_economica": false,
+    "balance_en_cero": false,
+    "agendarVisita": null,
+    "realizaVisita": false
+  }
+},
+{
+  "model": "helloworld.procesocompensacion",
+  "pk": 6,
+  "fields": {
+    "usuario": null,
+    "solicitud": null,
+    "approved": true,
+    "visita": null,
+    "titulo": "compensacion R201705061",
+    "compensacion_economica": true,
+    "balance_en_cero": true,
+    "agendarVisita": null,
+    "realizaVisita": false
+  }
+},
+{
+  "model": "helloworld.procesocompensacion",
+  "pk": 2,
+  "fields": {
+    "usuario": null,
+    "solicitud": null,
+    "approved": true,
+    "visita": null,
+    "titulo": "compensacion R201705061",
+    "compensacion_economica": false,
+    "balance_en_cero": false,
+    "agendarVisita": null,
+    "realizaVisita": false
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2017-05-06T14:50:30.606Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "A001",
+    "object_repr": "A001",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2017-05-08T14:50:30.606Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "A002",
+    "object_repr": "A002",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2017-05-08T12:24:22.828Z",
+    "user": 1,
+    "content_type": 26,
+    "object_id": "2",
+    "object_repr": "CoordinadorFlora",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2017-05-08T12:24:22.828Z",
+    "user": 1,
+    "content_type": 26,
+    "object_id": "2",
+    "object_repr": "testusr",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2017-05-08T12:25:29.579Z",
+    "user": 1,
+    "content_type": 26,
+    "object_id": "3",
+    "object_repr": "tecnico_flora",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2017-05-08T12:34:33.262Z",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "003",
+    "object_repr": "acta 003",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2017-05-08T12:34:33.449Z",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "002",
+    "object_repr": "acta 002",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2017-05-08T12:34:47.524Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "004",
+    "object_repr": "Balance object",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2017-05-08T12:34:47.717Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "003",
+    "object_repr": "Balance object",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2017-05-08T12:34:47.801Z",
+    "user": 1,
+    "content_type": 20,
+    "object_id": "001",
+    "object_repr": "Balance object",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2017-05-08T12:35:28.507Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "003",
+    "object_repr": "003",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2017-05-08T12:35:28.682Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "001",
+    "object_repr": "001",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2017-05-08T12:35:36.085Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "003",
+    "object_repr": "003",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2017-05-08T12:35:51.632Z",
+    "user": 1,
+    "content_type": 25,
+    "object_id": "2017",
+    "object_repr": "2017",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2017-05-08T12:36:08.100Z",
+    "user": 1,
+    "content_type": 21,
+    "object_id": "003",
+    "object_repr": "003",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2017-05-08T12:36:08.257Z",
+    "user": 1,
+    "content_type": 21,
+    "object_id": "002",
+    "object_repr": "002",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2017-05-08T12:36:08.340Z",
+    "user": 1,
+    "content_type": 21,
+    "object_id": "001",
+    "object_repr": "001",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2017-05-08T16:31:57.913Z",
+    "user": 1,
+    "content_type": 26,
+    "object_id": "5",
+    "object_repr": "secretaria",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2017-05-08T16:32:10.947Z",
+    "user": 1,
+    "content_type": 26,
+    "object_id": "4",
+    "object_repr": "",
+    "action_flag": 3,
+    "change_message": ""
+  }
+}
+]
